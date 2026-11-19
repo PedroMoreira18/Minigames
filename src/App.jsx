@@ -1,6 +1,7 @@
 
 import { BrowserRouter, Routes, Route, Link, useParams, Navigate } from "react-router-dom";
 import "./App.css";
+import ImpostorGame from "./impostorGame.jsx";
 
 const games = [
   {
@@ -171,10 +172,11 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/jogo/:slug" element={<GamePage />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/jogo/impostor" element={<ImpostorGame />} />
+      <Route path="/jogo/:slug" element={<GamePage />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
     </BrowserRouter>
   );
 }
